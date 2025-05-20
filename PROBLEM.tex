@@ -1,0 +1,69 @@
+
+A long time ago in a galaxy far, far away..
+
+Civil war engulfs the Galaxy! The mighty \bf{Republic}, defenders of peace and order, faces the relentless onslaught of the \bf{Separatist Alliance}, whose mechanical legions seek to plunge the galaxy into chaos. Both sides prepare for one final confrontation — a calculated battle of attrition.
+
+The \bf{Republic} and the \bf{Separatists} each have \it{n} armies. The Republic's army strengths are given in an array \it{A} of length \it{n}, and the Separatists' in an array \it{B} of length \it{n}.
+
+The two sides engage in battle, taking turns attacking the \bf{smallest} remaining army of the opponent with any of their own armies, starting with the \bf{Separatists}.
+
+\large{Rules of battle}:
+\begin{itemize}
+  \item The \bf{attacker} selects any one of their own armies and attacks smallest remaining army of the opponent.
+  \item The two armies battle: \begin{itemize}
+    \item The \bf{smaller} of the two armies is destroyed.
+    \item The \bf{stronger} army survives, but its strength is reduced by the strength of the destroyed army.
+  \end{itemize}
+\end{itemize}
+
+
+For example, if the smallest Republic army has strength \it{23} and the Separatists choose to attack with an army of strength \it{34}, then the Republic army is destroyed, and the attacking Separatist army’s new strength becomes \it{11} (\it{34 - 23}).
+
+Note that if the attacking and defending armies both have the same strength, both the armies are destroyed. 
+
+The battle continues until one or both sides have no armies left.
+
+At the end:
+\begin{itemize}
+\item The side with \bf{positive total remaining strength} is declared the \bf{winner}.
+\item both sides have non-positive total strength, the battle is considered a \bf{draw}.
+\end{itemize}
+
+You are to determine:
+
+\bf{How many pairs of indices} \it{(i, j)} such that $1\le i, j\le n$ exist where \bf{swapping} $A_i$ and $B_j$ \bf{results in a Republic victory}, assuming both sides follow the optimal strategy of attack?
+
+\large{Input}
+\begin{itemize}
+\item The first line contains an integer \it{n} $ (1 \le n\le 2⋅10^5) $ — the number of armies on each side.
+\item The second line contains \it{n} integers $A_1, A_2, ..., A_n$ $(1\le Aᵢ\le 10^9)$ — the strengths of the Republic's armies.
+\item The third line contains \it{n} integers $B_1, B_2, ..., B_n$ $(1\le Bᵢ \le 10^9)$ — the strengths of the Separatists' armies.
+\end{itemize}
+
+\large{Output}
+Print a single integer — the number of index pairs \it{(i, j)} such that swapping $A_i$ and $B_j$ results in a \bf{Republic victory}
+
+
+
+
+
+In the first test case, Try the only possible swap: \it{i = 1, j = 1}.
+
+Thus \it{A = [2]} and \it{B = [1]}
+\begin{itemize}
+\item Separatists attack:
+Republic's weakest army = 2, Separatist's only army is 1 → Separatist army is destroyed.
+Republic army's stength becomes \it{2-1 = 1}
+\end{itemize}
+
+
+Separatists have no armies left → battle ends → Republic wins (1 army left with strength 1) ✅
+
+So, 1 valid swap.
+
+Remarks:
+\begin{itemize}
+\item An army with \bf{zero} strength is considered destroyed.
+\item Each side attacks \bf{alternately}, starting with the Separatists.
+\item Both sides follow the \bf{optimal strategy} (i.e., they always attack using the most advantageous choice available to them).
+\end{itemize}

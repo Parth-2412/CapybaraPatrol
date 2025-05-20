@@ -21,7 +21,7 @@ However, we will now make an observation which renders any simulation of the bat
 
 
 Now we have a very simple condition (both sufficient and necessary) for victory.
-And this problem boils down to simply calculating all pairs `(i,j)` such that on swapping $A_i$ and $B_j$ => $sum(A) > sum(B)$ is acheieved.
+And this problem boils down to simply calculating all pairs `(i,j)` such that on swapping $A_i$ and $B_j$ => $sum(A) > sum(B)$ is achieved.
 
 This can be done with a simple sorting of B, and then for each element of A (say $A_i$), applying a binary search on B, to find the smallest element of B (say $B_j$) we can swap such that $sum(A) > sum(B)$. 
 
@@ -29,7 +29,7 @@ This can be done with a simple sorting of B, and then for each element of A (say
 - Whereas all the elements of B $\ge$ $B_j$ can be swapped with $A_i$
 while preserving the inequality. 
   - Since as we move to larger $B_j$ for the same $A_i$ we increase sum(A) and decrease sum(B)
-- Therefore for each $A_i$, we find such $B_j$ and add $n-j+1$ to our answer
+- Therefore for each $A_i$, we find such a $B_j$ and add $n-j+1$ to our answer
 
 
 
